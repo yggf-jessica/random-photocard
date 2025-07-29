@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS variables for shadcn/ui colors (optional, but good for consistency) */
+@layer base {
+  :root {
+    --background: 330 60% 98%; /* Very light pastel pink */
+    --foreground: 330 40% 20%; /* Darker pink for text */
+
+    --card: 330 60% 99%; /* Slightly lighter card background */
+    --card-foreground: 330 40% 20%;
+
+    --popover: 330 60% 99%;
+    --popover-foreground: 330 40% 20%;
+
+    --primary: 330 60% 85%; /* Main pastel pink for buttons */
+    --primary-foreground: 330 10% 10%; /* Very dark pink/almost black for text on primary */
+
+    --secondary: 330 40% 90%; /* Lighter pastel pink for secondary elements */
+    --secondary-foreground: 330 40% 20%;
+
+    --muted: 330 20% 95%; /* Muted pastel pink */
+    --muted-foreground: 330 20% 50%; /* Greyish pink for muted text */
+
+    --accent: 330 60% 80%; /* Slightly deeper pastel pink for accent */
+    --accent-foreground: 330 10% 10%;
+
+    --destructive: 0 84.2% 60.2%; /* Keeping destructive red for contrast */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 330 30% 90%; /* Light pastel pink border */
+    --input: 330 30% 90%;
+    --ring: 330 60% 85%; /* Same as primary for focus ring */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 330 20% 15%; /* Dark muted pink background */
+    --foreground: 330 40% 90%; /* Lighter pink for text */
+
+    --card: 330 20% 18%;
+    --card-foreground: 330 40% 90%;
+
+    --popover: 330 20% 18%;
+    --popover-foreground: 330 40% 90%;
+
+    --primary: 330 40% 60%; /* Muted pastel pink for dark mode buttons */
+    --primary-foreground: 330 60% 98%; /* Very light pastel pink for text on primary */
+
+    --secondary: 330 30% 30%; /* Darker secondary pink */
+    --secondary-foreground: 330 40% 90%;
+
+    --muted: 330 15% 25%;
+    --muted-foreground: 330 20% 70%;
+
+    --accent: 330 40% 50%;
+    --accent-foreground: 330 60% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 330 15% 25%;
+    --input: 330 15% 25%;
+    --ring: 330 40% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Default create-react-app styles, keep if you want them */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
