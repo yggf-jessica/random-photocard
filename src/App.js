@@ -7,14 +7,24 @@ import { Button } from "./components/ui/Button"
 import { Input } from "./components/ui/Input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/Card"
 
+// Function to construct image URL
+const getAssetPath = (filename) => `${process.env.PUBLIC_URL || ""}${filename}`
+
 const photocards = [
-  { id: 1, url: "/IMG_1984.JPG", alt: "Photocard 1984" },
-  { id: 2, url: "/IMG_1985.JPG", alt: "Photocard 1985" },
-  { id: 3, url: "/IMG_1986.JPG", alt: "Photocard 1986" },
-  { id: 4, url: "/IMG_1987.JPG", alt: "Photocard 1987" },
-  { id: 5, url: "/IMG_1988.JPG", alt: "Photocard 1988" },
-  { id: 6, url: "/IMG_1989.JPG", alt: "Photocard 1989" },
-  { id: 7, url: "/IMG_1991.JPG", alt: "Photocard 1991" },
+  { id: 1, url: getAssetPath("/IMG_1984.JPG"), alt: "Photocard 1984" },
+  { id: 2, url: getAssetPath("/IMG_1985.JPG"), alt: "Photocard 1985" },
+  { id: 3, url: getAssetPath("/IMG_1986.JPG"), alt: "Photocard 1986" },
+  { id: 4, url: getAssetPath("/IMG_1987.JPG"), alt: "Photocard 1987" },
+  { id: 5, url: getAssetPath("/IMG_1988.JPG"), alt: "Photocard 1988" },
+  { id: 6, url: getAssetPath("/IMG_1989.JPG"), alt: "Photocard 1989" },
+  { id: 7, url: getAssetPath("/IMG_1991.JPG"), alt: "Photocard 1991" },
+  { id: 8, url: getAssetPath("/IMG_1996.JPG"), alt: "Photocard 1996" },
+  { id: 9, url: getAssetPath("/IMG_1997.JPG"), alt: "Photocard 1997" },
+  { id: 10, url: getAssetPath("/IMG_1998.JPG"), alt: "Photocard 1998" },
+  { id: 11, url: getAssetPath("/IMG_1999.JPG"), alt: "Photocard 1999" },
+  { id: 12, url: getAssetPath("/IMG_2001.JPG"), alt: "Photocard 2001" },
+  { id: 13, url: getAssetPath("/IMG_2002.JPG"), alt: "Photocard 2002" },
+  { id: 14, url: getAssetPath("/IMG_2003.JPG"), alt: "Photocard 2003" },
 ]
 
 function App() {
@@ -85,7 +95,11 @@ function App() {
             <div className="flex flex-col items-center justify-center space-y-4">
               <div className="relative w-[200px] h-[300px] border-4 border-dashed border-border rounded-lg overflow-hidden flex items-center justify-center">
                 {/* Mystery photocard box with image */}
-                <img src="/desireunleash.jpg" alt="Mystery photocard" className="w-full h-full object-cover" />
+                <img
+                  src={getAssetPath("/desireunleash.jpg") || "/placeholder.svg"}
+                  alt="Mystery photocard"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           ) : drawnPhotocard ? (
@@ -93,7 +107,7 @@ function App() {
               <div className="flex justify-center">
                 <div className="relative w-[200px] h-[300px] border-4 border-primary rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src={drawnPhotocard.url || "/placeholder.svg"}
+                    src={drawnPhotocard.url || getAssetPath("/placeholder.svg")}
                     alt={drawnPhotocard.alt}
                     className="w-full h-full object-cover rounded-md"
                   />
